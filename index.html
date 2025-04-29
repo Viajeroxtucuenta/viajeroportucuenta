@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viajero por cuenta propia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background: #f4faff;
+      color: #0D3B66;
+      line-height: 1.6;
+    }
+    header {
+      background: #0D3B66;
+      padding: 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #0D3B66;
+    }
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, #2A9D8F, #A9DADC);
+      padding: 80px 20px;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 3em;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea, button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #2A9D8F;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0D3B66;
+      color: white;
+      margin-top: 40px;
+    }
+    .mapa iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+    }
+    .social {
+      margin-top: 20px;
+    }
+    .social a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Viajero" />
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#destinos">Destinos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Viajero por cuenta propia</h1>
+    <p><em>On your own, not alone.</em></p>
+  </section>
+
+  <section id="sobre">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos una agencia especializada en viajes personalizados. Te ayudamos a descubrir el mundo a tu ritmo, con experiencias únicas diseñadas especialmente para ti. Desde mochileros hasta familias, nuestra misión es acompañarte sin imponerte.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Diseño de itinerarios personalizados</li>
+      <li>Asistencia en reservas (vuelos, hospedaje, tours)</li>
+      <li>Guías digitales y recomendaciones locales</li>
+      <li>Soporte durante el viaje</li>
+    </ul>
+  </section>
+
+  <section id="destinos">
+    <h2>Destinos destacados</h2>
+    <p>Explora desde las costas de Costa Rica hasta las calles vibrantes de Nueva York y las playas de California. Armamos tu ruta ideal sin importar el destino.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <form>
+      <input type="text" placeholder="Nombre completo" required />
+      <input type="email" placeholder="Correo electrónico" required />
+      <textarea placeholder="¿Qué tipo de viaje te interesa?" rows="4"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section class="mapa">
+    <h2>Encuéntranos</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.859020674865!2d-89.21675058550444!3d13.692940603840751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQxJzM0LjYiTiA4OcKwMTMnMDEuMiJX!5e0!3m2!1ses-419!2s!4v1675020602112" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 Viajero por cuenta propia. Todos los derechos reservados.
+    <div class="social">
+      <a href="#" title="Facebook">📘</a>
+      <a href="#" title="Instagram">📸</a>
+      <a href="#" title="WhatsApp">💬</a>
+    </div>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('section', { 
+      distance: '50px', 
+      duration: 1000, 
+      easing: 'ease-out', 
+      origin: 'bottom',
+      interval: 200
+    });
+  </script>
+</body>
+</html>
