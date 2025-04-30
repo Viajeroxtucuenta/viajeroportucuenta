@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viajero por cuenta propia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background: #f4faff;
+      color: #0D3B66;
+      line-height: 1.6;
+    }
+    header {
+      background: #0D3B66;
+      padding: 20px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #0D3B66;
+    }
+    .hero {
+      text-align: center;
+      background: linear-gradient(to right, #2A9D8F, #A9DADC);
+      padding: 80px 20px;
+      color: white;
+    }
+    .hero h1 {
+      font-size: 3em;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 100%;
+      font-size: 1em;
+    }
+    button {
+      background-color: #2A9D8F;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #21867a;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0D3B66;
+      color: white;
+      margin-top: 40px;
+    }
+    .mapa iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 12px;
+    }
+    .social {
+      margin-top: 20px;
+    }
+    .social a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 1.8em;
+      transition: color 0.3s;
+    }
+    .social a:hover {
+      color: #A9DADC;
+    }
+    .popup {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #2A9D8F;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      display: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div id="popup" class="popup">Thank you! Your message has been sent.</div>
+  <header>
+    <img src="A_logo_for_a_travel_company_named_"Viajero_por_cue.png" alt="Logo Viajero" />
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#destinos">Destinos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Viajero por cuenta propia</h1>
+    <p><em>On your own, not alone.</em></p>
+  </section>
+
+  <section id="sobre">
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos una agencia especializada en viajes personalizados. Te ayudamos a descubrir el mundo a tu ritmo, con experiencias únicas diseñadas especialmente para ti. Desde mochileros hasta familias, nuestra misión es acompañarte sin imponerte.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Diseño de itinerarios personalizados</li>
+      <li>Asistencia en reservas (vuelos, hospedaje, tours)</li>
+      <li>Guías digitales y recomendaciones locales</li>
+      <li>Soporte durante el viaje</li>
+    </ul>
+  </section>
+
+  <section id="destinos">
+    <h2>Destinos destacados</h2>
+    <p>Explora desde las costas de Costa Rica hasta las calles vibrantes de Nueva York y las playas de California. Armamos tu ruta ideal sin importar el destino.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <form action="https://formspree.io/f/xyzwkdjj" method="POST" onsubmit="return showMessage()">
+      <label>
+        Tu correo:
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Tu mensaje:
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section class="mapa">
+    <h2>Encuéntranos</h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.859020674865!2d-89.21675058550444!3d13.692940603840751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQxJzM0LjYiTiA8OcKwMTMnMDEuMiJX!5e0!3m2!1ses-419!2s!4v1675020602112" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer>
+    &copy; 2025 Viajero por cuenta propia. Todos los derechos reservados.
+    <div class="social">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/50660000000" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('section', {
+      distance: '50px',
+      duration: 1000,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200
+    });
+
+    function showMessage() {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'block';
+      setTimeout(() => {
+        popup.style.display = 'none';
+      }, 4000);
+      return true;
+    }
+  </script>
+</body>
+</html>
