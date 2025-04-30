@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viajero por cuenta propia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0d3b66;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+    header img {
+      height: 50px;
+    }
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+    }
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: #e0f7fa;
+    }
+    .hero img {
+      height: 80px;
+    }
+    .cta-button {
+      background-color: #0d3b66;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    section {
+      padding: 2rem;
+    }
+    .gallery {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .gallery div {
+      width: 30%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+    form label {
+      display: block;
+      margin-top: 1rem;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      font-size: 2rem;
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      text-align: center;
+    }
+    footer {
+      background-color: #0d3b66;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    .social a {
+      margin: 0 0.5rem;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo-viajero.png" alt="Logo Viajero" />
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#destinos">Destinos</a>
+      <a href="#mision-vision">Misión y Visión</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <img src="logo-viajero.png" alt="Logo Viajero" />
+    <h1>Viajero por cuenta propia</h1>
+    <p><em>On your own, not alone.</em></p>
+    <a href="#contacto" class="cta-button">
+      <i class="fas fa-plane-departure"></i> Reserva tu viaje
+    </a>
+  </section>
+
+  <section id="mision-vision">
+    <h2>Misión</h2>
+    <p>Ofrecer experiencias de viaje personalizadas, seguras y memorables que permitan a nuestros clientes descubrir el mundo a su ritmo y con confianza.</p>
+    <h2>Visión</h2>
+    <p>Ser la empresa líder en viajes personalizados en América Latina, reconocida por nuestra innovación, cercanía y compromiso con cada viajero.</p>
+  </section>
+
+  <section id="destinos">
+    <h2>Destinos Populares</h2>
+    <div class="gallery">
+      <div>
+        <img src="europa.jpg" alt="Europa">
+        <p>Europa: París, Roma, Barcelona y más.</p>
+      </div>
+      <div>
+        <img src="suramerica.jpg" alt="Sudamérica">
+        <p>Sudamérica: Machu Picchu, Patagonia, Cartagena.</p>
+      </div>
+      <div>
+        <img src="usa.jpg" alt="USA">
+        <p>USA: Nueva York, Miami, Las Vegas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <form action="https://formspree.io/f/xyzwkdjj" method="POST">
+      <label>
+        Tu correo:
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Tu mensaje:
+        <textarea name="message" required></textarea>
+      </label>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/50664826664" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <p>&copy; 2025 Viajero por cuenta propia. Todos los derechos reservados.</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+</body>
+</html>

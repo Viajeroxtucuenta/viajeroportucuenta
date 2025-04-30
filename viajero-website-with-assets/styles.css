@@ -1,0 +1,51 @@
+
+body {
+    font-family: 'Outfit', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #002e5b;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header img {
+    max-width: 200px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: #4ca0a1;
+    color: white;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.hero img {
+    max-width: 100px;
+}
+
+footer {
+    background-color: #002e5b;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+.social a {
+    color: white;
+    margin: 0 10px;
+}
