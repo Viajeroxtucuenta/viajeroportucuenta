@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,6 +6,7 @@
   <title>Viajero por cuenta propia</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script async defer src="https://widget.getyourguide.com/dist/pa.umd.production.min.js" data-gyg-partner-id="1VOKDHC"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <style>
     body {
@@ -15,90 +15,112 @@
       padding: 0;
     }
     header {
-      background-color: #0d3b66;
-      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     header img {
       height: 50px;
     }
+    nav {
+      display: none;
+    }
+    nav.active {
+      display: block;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
     nav a {
-      margin: 0 1rem;
-      color: white;
+      display: block;
+      padding: 1rem;
       text-decoration: none;
+      color: #333;
+    }
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .accordion-section {
+      border-top: 1px solid #ccc;
+    }
+    .accordion-title {
+      cursor: pointer;
+      padding: 1rem;
+      background-color: #f9f9f9;
+    }
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.5s ease, padding 0.5s ease;
+      padding: 0 1rem;
+    }
+    .accordion-content.open {
+      padding: 1rem;
+      max-height: 500px;
     }
     .hero {
+      position: relative;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 3rem 1rem;
-      background-color: #e0f7fa;
+      color: white;
+      overflow: hidden;
     }
-    .hero img {
-      height: 80px;
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .hero p {
+      font-style: italic;
+      margin-bottom: 1rem;
     }
     .cta-button {
-      background-color: #0d3b66;
+      background-color: #007BFF;
       color: white;
-      padding: 1rem 2rem;
+      padding: 0.75rem 1.5rem;
       text-decoration: none;
       border-radius: 5px;
-      display: inline-block;
-      margin-top: 1rem;
+      font-weight: 600;
     }
     section {
       padding: 2rem;
     }
-    .gallery {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-    }
-    .gallery div {
-      width: 30%;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: auto;
-    }
-    form {
-      max-width: 500px;
-      margin: auto;
-    }
-    form label {
-      display: block;
-      margin-top: 1rem;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      font-size: 2rem;
-      padding: 0.5rem 1rem;
-      border-radius: 50%;
-      text-align: center;
-    }
-    footer {
-      background-color: #0d3b66;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    .social a {
-      margin: 0 0.5rem;
-      color: white;
+    h2 {
+      color: #007BFF;
     }
   </style>
 </head>
 <body>
   <header>
     <img src="logo-viajero.png" alt="Logo Viajero" />
-    <nav>
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="menu">
       <a href="#inicio">Inicio</a>
       <a href="#sobre">Sobre</a>
       <a href="#servicios">Servicios</a>
@@ -108,66 +130,50 @@
     </nav>
   </header>
 
-  <section class="hero">
-    <img src="logo-viajero.png" alt="Logo Viajero" />
+  <section class="hero" id="inicio">
+    <video autoplay muted loop>
+      <source src="video-banner.mp4" type="video/mp4">
+      Tu navegador no admite video HTML5.
+    </video>
     <h1>Viajero por cuenta propia</h1>
     <p><em>On your own, not alone.</em></p>
     <a href="#contacto" class="cta-button">
-      <i class="fas fa-plane-departure"></i> Reserva tu viaje
+      <i class="fas fa-plane-departure"></i> Personaliza tu experiencia
     </a>
   </section>
 
   <section id="mision-vision">
     <h2>Misión</h2>
-    <p>Ofrecer experiencias de viaje personalizadas, seguras y memorables que permitan a nuestros clientes descubrir el mundo a su ritmo y con confianza.</p>
+    <p>Brindar experiencias de viaje únicas y personalizadas que empoderen a los viajeros a explorar el mundo a su manera, con confianza y respaldo.</p>
     <h2>Visión</h2>
-    <p>Ser la empresa líder en viajes personalizados en América Latina, reconocida por nuestra innovación, cercanía y compromiso con cada viajero.</p>
+    <p>Ser la empresa líder en viajes personalizados para viajeros independientes en América Latina, promoviendo la conexión cultural, el respeto por el entorno y el descubrimiento personal.</p>
   </section>
 
-  <section id="destinos">
-    <h2>Destinos Populares</h2>
-    <div class="gallery">
-      <div>
-        <img src="europa.jpg" alt="Europa">
-        <p>Europa: París, Roma, Barcelona y más.</p>
-      </div>
-      <div>
-        <img src="suramerica.jpg" alt="Sudamérica">
-        <p>Sudamérica: Machu Picchu, Patagonia, Cartagena.</p>
-      </div>
-      <div>
-        <img src="usa.jpg" alt="USA">
-        <p>USA: Nueva York, Miami, Las Vegas.</p>
-      </div>
-    </div>
+  <section id="getyourguide">
+    <h2><i class="fas fa-map-marked-alt"></i> Explora con GetYourGuide</h2>
+    <p>Reserva actividades, tours y entradas en todo el mundo con nuestro socio oficial.</p>
+    <a href="https://www.getyourguide.es?partner_id=1VOKDHC&cmp=share_to_earn" target="_blank" class="cta-button">
+      Ver actividades
+    </a>
   </section>
 
   <section id="contacto">
     <h2>Contáctanos</h2>
     <form action="https://formspree.io/f/xyzwkdjj" method="POST">
-      <label>
-        Tu correo:
-        <input type="email" name="email" required />
-      </label>
-      <label>
-        Tu mensaje:
+      <label>Tu correo:
+        <input type="email" name="email" required>
+      </label><br>
+      <label>Tu mensaje:
         <textarea name="message" required></textarea>
-      </label>
+      </label><br>
       <button type="submit">Enviar</button>
     </form>
   </section>
 
-  <a href="https://wa.me/50664826664" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-
-  <footer>
-    <p>&copy; 2025 Viajero por cuenta propia. Todos los derechos reservados.</p>
-    <div class="social">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-    </div>
-  </footer>
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
