@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Viajero por cuenta propia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <style>
+    :root {
+      --primary: #007BFF;
+      --secondary: #FF6F3C;
+      --dark: #333;
+      --light: #f9f9f9;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--light);
+      color: var(--dark);
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header img {
+      height: 50px;
+    }
+    nav {
+      display: none;
+    }
+    nav.active {
+      display: block;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      display: block;
+      padding: 1rem;
+      text-decoration: none;
+      color: var(--dark);
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: var(--secondary);
+    }
+    .menu-toggle {
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover no-repeat;
+      padding: 5rem 1rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 1rem 0 0.5rem;
+      font-family: 'Merriweather', serif;
+    }
+    .hero p {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #ddd;
+    }
+    .cta-button {
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .cta-button:hover {
+      transform: scale(1.05);
+      background-color: #ff5722;
+    }
+    section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    h2 {
+      color: var(--primary);
+      margin-bottom: 2rem;
+      font-family: 'Merriweather', serif;
+    }
+    .destination-gallery {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    .destination-item {
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .destination-item:hover {
+      transform: translateY(-5px);
+    }
+    .destination-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .destination-item img:hover {
+      transform: scale(1.05);
+    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .service-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 280px;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card i {
+      font-size: 2rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    form input, form textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background: var(--primary);
+      color: #fff;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    form button:hover {
+      background: #0056b3;
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: var(--secondary);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    @media (min-width: 768px) {
+      nav {
+        display: flex !important;
+        position: static !important;
+        box-shadow: none !important;
+        width: auto !important;
+        gap: 1rem;
+      }
+      nav a {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+      }
+      .menu-toggle {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://images.unsplash.com/photo-1522199710521-72d69614c702?w=80" alt="Logo Viajero" />
+    <button class="menu-toggle" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav id="menu">
+      <a href="#inicio" onclick="closeMenu()">Inicio</a>
+      <a href="#sobre" onclick="closeMenu()">Sobre</a>
+      <a href="#servicios" onclick="closeMenu()">Servicios</a>
+      <a href="#destinos" onclick="closeMenu()">Destinos</a>
+      <a href="#mision-vision" onclick="closeMenu()">Misión y Visión</a>
+      <a href="#contacto" onclick="closeMenu()">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="inicio">
+    <h1>Viajero por cuenta propia</h1>
+    <p><em>On your own, not alone.</em></p>
+    <a href="#contacto" class="cta-button">
+      <i class="fas fa-plane-departure"></i> Personaliza tu experiencia
+    </a>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos una comunidad de viajeros independientes que creen en explorar el mundo a su propio ritmo, pero siempre acompañados de una red de apoyo e inspiración.</p>
+  </section>
+
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <div class="services">
+      <div class="service-card">
+        <i class="fas fa-map-marked-alt"></i>
+        <h3>Itinerarios Personalizados</h3>
+        <p>Diseñamos rutas únicas según tus intereses y presupuesto.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-hotel"></i>
+        <h3>Reservas de Hospedaje</h3>
+        <p>Encuentra alojamientos seguros y económicos en cualquier destino.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-hiking"></i>
+        <h3>Experiencias Locales</h3>
+        <p>Conecta con la cultura y vive actividades auténticas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="destinos">
+    <h2>Destinos Populares</h2>
+    <div class="destination-gallery">
+      <div class="destination-item">
+        <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad" alt="Europa">
+        <p>Explora la historia, la arquitectura y la cultura única de Europa en ciudades como París, Roma y Barcelona.</p>
+      </div>
+      <div class="destination-item">
+        <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9" alt="Suramérica">
+        <p>Disfruta de aventuras naturales, cultura vibrante y paisajes impresionantes en Perú, Colombia, Argentina y más.</p>
+      </div>
+      <div class="destination-item">
+        <img src="https://images.unsplash.com/photo-1503264116251-35a269479413" alt="USA">
+        <p>Descubre lo mejor de Estados Unidos desde Nueva York y Los Ángeles hasta parques nacionales y rutas icónicas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="mision-vision">
+    <h2>Misión y Visión</h2>
+    <p><strong>Misión:</strong> Inspirar y acompañar a los viajeros que buscan libertad, aventura y experiencias únicas.</p>
+    <p><strong>Visión:</strong> Ser la comunidad líder de viajes independientes en el mundo hispano.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo" required>
+      <textarea rows="5" placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Viajero por cuenta propia. Todos los derechos reservados.</p>
+    <div>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+    function closeMenu() {
+      document.getElementById('menu').classList.remove('active');
+    }
+    ScrollReveal().reveal('section', { delay: 200, distance: '50px', origin: 'bottom', duration: 1000, easing: 'ease-in-out' });
+    ScrollReveal().reveal('.service-card', { interval: 200 });
+    ScrollReveal().reveal('.destination-item', { interval: 200 });
+  </script>
+</body>
+</html>
